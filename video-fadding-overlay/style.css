@@ -1,0 +1,78 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.video-section-main-wrapper {
+  flex: 1;
+  width: 100vw !important;
+  height: 100;
+  display: block;
+}
+.overlay {
+  width: 100vw !important;
+  height: 100vh;
+  position: fixed;
+  background-color: #ffffff;
+  opacity: 0.85;
+  margin: 0;
+  transition: all 1.2s ease-in-out !important;
+  padding: 0;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: 100vw !important;
+  height: 100%;
+  z-index: -1000;
+  display: block;
+}
+.container * {
+  z-index: 1000;
+  opacity: 1 !important;
+}
+.container{
+  display: flex;
+  flex: 1;
+  padding: 6em;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.play-button-container {
+  border: 0.5px solid black;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: 100px;
+  cursor: pointer;
+}
+.cancel-button-container{
+  border: none;
+  position: absolute;
+  right: 70px;
+  top: 50px;
+}
+.play-button-img {
+  width: 20px;
+  height: 20px;
+  color: #000;
+}
+#cancelButton{
+  z-index: 2000;
+}
+.col {
+  width: 100vw !important;
+    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1 !important;
+}

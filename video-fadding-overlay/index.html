@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class='video-section-main-wrapper'>
+        <video autoplay muted playsinline loop id="myVideo">
+            <source src="./assets/Sequence-02.mp4" type="video/mp4">
+        </video>
+<!--  -->
+        <div onClick='overlayOff()' id='cancelButton' class='play-button-container cancel-button-container'>
+            <img class='play-button-img' src='./assets/cancel_black.png' />
+        </div>
+<!--  -->
+        <div class="overlay" id='overlay'>
+            <div class='container' id='content-box'>
+                <div class="col">
+                    <div onClick='overlayOn()' class='play-button-container'>
+                        <img class='play-button-img' src='./assets//play-button.png' />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./app.js"></script>
+
+</html>

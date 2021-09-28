@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+    </head>
+
+    <body>
+        <div style="max-width: 400px; margin: 0 auto; border: 1px solid #000; padding: 20px; margin: 20px; ">
+            <h2 style="width: 100%; text-align: center;">Days Calculator</h2>
+            <hr>
+
+            <div>
+                <h3>Start Date</h3>
+                <input id='startDate' type="date">
+                <h4 id='startDayName'></h4>
+            </div>
+            <hr>
+            <div>
+                <h3>Number of Days</h3>
+                <input id='nod' type="number">
+            </div>
+            <hr>
+            <div>
+                <h3>End Date</h3>
+                <h4 id='result'></h4>
+                <h4 id='endDayName'></h4>
+            </div>
+
+            <button onclick="addDays()">calculate</button>
+        </div>
+    </body>
+    <!-- javascript -->
+    <script>
+        // get start date 
+        var startDate = document.getElementById('startDate')
+        // get total number of days to be added 
+        var daysToAdd = document.getElementById('nod')
+        // checks if date is selected
+        document.getElementById("startDate").addEventListener("blur", function () {
+            // writes start day name in h4 tag
+            document.getElementById('startDayName').textContent = getDayName(new Date(startDate.value))
+            addDays()
+        });
+        // checks if days are entered
+        document.getElementById("nod").addEventListener("blur", function () {
+            addDays()
+            // console.log('days updated', parseInt(document.getElementById('nod').value))
+        });
+
+        // function that will perform addition  
+        function addDays() {
+            if (startDate.value != '' && daysCheck(daysToAdd)) {
+                // perform calculatiom
+                var result = new Date(startDate.value);
+                result.setDate(result.getDate() + daysCheck(daysToAdd));
+
+                // writes result date && result day name in h4 tag
+                document.getElementById('result').textContent = result.toLocaleDateString()
+                document.getElementById('endDayName').textContent = getDayName(result)
+            }
+        }
+        // function that will return day name on specific date
+        function getDayName(date) {
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+            var dayName = days[date.getDay()]
+            return dayName
+        }
+        // check if days input is empty or not
+        function daysCheck(e) {
+            if (e.value.length > 0) {
+                return parseInt(e.value)
+            } else return null
+        }
+
+
+
+
+
+    </script>
+
+</html>
